@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  db:
+    image: pgvector/pgvector:pg17 # Use PostgreSQL 17 image with pgvector
+    container_name: rag_postgres_db
+    environment:
+      # Make sure these match your config.py/rag_pipeline.py credentials
+      POSTGRES_DB: RAG_DB_UPLOADS
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password # !!! CHANGE THIS PASSWORD if needed !!!
+    ports:
+      - "5433:5432" # Host 5433 maps to container 5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    # Add network if you define one, otherwise default bridge is used
+
+  # --- ADD THIS SERVICE DEFINITION ---
+  python-executor:
+    # Use the name of the image you built for the executor service
+    image: py-executor-fastapi
+    container_name: python_executor_service
+    ports:
+      - "8081:8080" # Map host 8081 to internal executor port 8080 (assuming executor runs on 8080)
+    restart: unless-stopped
+    # Add depends_on if needed, ensures db starts first (optional but good practice)
+    depends_on:
+      - db
+    # Add network if you define one, ensures both services are on the same network
+
+volumes:
+  postgres_data:
+    driver: local

@@ -1,0 +1,46 @@
+# Core FastAPI and Pydantic
+fastapi>=0.100.0
+uvicorn[standard]>=0.20.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+python-dotenv>=1.0.0
+
+# Langchain Framework & Integrations
+langchain>=0.1.0
+langchain-core>=0.1.0
+langchain-community>=0.0.20
+langchain-google-genai>=0.0.9  # For Gemini models
+langchain-cohere>=0.1.0       # For Cohere Reranker
+langchain-postgres>=0.1.0     # For PGVector
+langchain-text-splitters>=0.0.1 # For RecursiveCharacterTextSplitter
+langchainhub>=0.1.15          # Common for prompt hub access
+langchain-experimental>=0.0.50 # For experimental features
+
+# LLM & Embeddings SDKs
+google-generativeai>=0.3.0   # Gemini SDK
+sentence-transformers>=2.2.0 # HuggingFace embeddings
+
+# Vector Store & DB
+psycopg2-binary>=2.9.0       # PostgreSQL driver
+sqlalchemy>=2.0.0            # ORM and SQL expression language
+
+# Data Handling & Processing
+pandas>=1.5.0
+numpy>=1.20.0
+openpyxl>=3.0.0              # For Pandas .xlsx support
+pdfplumber>=0.10.0           # PDF text extraction
+docx2txt>=0.8                # DOCX text extraction
+beautifulsoup4>=4.9.0        # HTML parsing (used by WebBaseLoader)
+lxml>=4.9.0                  # Robust XML/HTML parsing
+tiktoken>=0.4.0              # Tokenizer for text splitting
+
+# API & Utilities
+requests>=2.25.0             # For DataScienceExecutor client
+python-multipart>=0.0.5      # For FastAPI file uploads
+schedule>=1.1.0              # For background tasks (e.g., temp file cleanup)
+
+# Authentication & Security
+passlib[bcrypt]              # Password hashing
+python-jose[cryptography]    # For JWT
+itsdangerous
+starlette-sessions
