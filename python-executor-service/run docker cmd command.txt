@@ -1,0 +1,5 @@
+#create docker image
+docker build -t py-executor-fastapi .
+
+#run docker image
+docker run -d --name python-executor -p 8081:8080 py-executor-fastapi
