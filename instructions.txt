@@ -1,0 +1,33 @@
+Step 1: Prerequisites
+
+Python: Version 3.11.
+Node.js and npm.
+Docker and Docker Compose
+PostgresSQL with vector extension
+
+Step 2: Backend Setup (FastAPI Server)
+Navigate to the Backend Directory
+Create and Activate a Python Virtual Environment
+Install Dependencies: Install all the required Python packages from the requirements.txt file.
+Configure Environment Variables according to your setup and folder dir.
+
+Step 3: Add Your Data
+Place any unstructured files (e.g., .pdf, .docx, .txt) you want to index into the MY_RAG/Backend/Document folder.
+If you have structured data files (e.g., .csv, .xlsx), place them in the same MY_RAG/Backend/Document folder. The indexing script will load them into the database.
+
+Step 4: Build the Index: Run the build_index.py script.
+Process all files in the Document folder.
+Create and store embeddings in the PGVector database.
+Create and save the sparse BM25 retriever index.
+Generate metadata files used by the application.
+
+Step 5: Run the Backend Server: Start the FastAPI application using Uvicorn.
+
+Step 6: Frontend Setup (React App)
+Open a New Terminal: Keep the backend server running in your current terminal and open a new one.
+Navigate to the Frontend Directory:
+- Install Dependencies: Install all the required Node.js packages.
+- Run the Frontend Development Server: Start the Vite development server.
+
+Step 7: Open your web browser and navigate to the frontend URL
+Register and login to the application
