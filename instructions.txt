@@ -22,12 +22,3 @@ Create and save the sparse BM25 retriever index.
 Generate metadata files used by the application.
 
 Step 5: Run the Backend Server: Start the FastAPI application using Uvicorn.
-
-Step 6: Frontend Setup (React App)
-Open a New Terminal: Keep the backend server running in your current terminal and open a new one.
-Navigate to the Frontend Directory:
-- Install Dependencies: Install all the required Node.js packages.
-- Run the Frontend Development Server: Start the Vite development server.
-
-Step 7: Open your web browser and navigate to the frontend URL
-Register and login to the application
